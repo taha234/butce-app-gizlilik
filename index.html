@@ -1,45 +1,263 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gizlilik Politikası — Bütçe Takip</title>
+<style>
+  :root {
+    --bg: #0B0E14;
+    --surface: #151A23;
+    --surface-2: #1C2430;
+    --accent: #3B9EFF;
+    --accent-bright: #5CC8FF;
+    --text: #E6EDF3;
+    --text-dim: #8B98A9;
+    --border: #232B38;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .top-glow {
+    position: fixed;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 400px;
+    background: radial-gradient(ellipse at center, rgba(59,158,255,0.16), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  header {
+    margin-bottom: 40px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--accent-bright);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+  }
+
+  .badge .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-bright);
+    box-shadow: 0 0 8px var(--accent-bright);
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 10px;
+    color: #fff;
+  }
+
+  .updated {
+    color: var(--text-dim);
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 28px;
+    margin-bottom: 16px;
+  }
+
+  .card + .card {
+    margin-top: 16px;
+  }
+
+  h2 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent-bright);
+    margin: 0 0 14px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  h2 .num {
+    color: var(--text-dim);
+    font-weight: 500;
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  p {
+    margin: 0 0 12px;
+    color: var(--text);
+    font-size: 15px;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  ul {
+    margin: 0 0 12px;
+    padding-left: 20px;
+  }
+
+  ul:last-child { margin-bottom: 0; }
+
+  li {
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: var(--text);
+  }
+
+  li:last-child { margin-bottom: 0; }
+
+  li strong {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  a {
+    color: var(--accent-bright);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(92,200,255,0.35);
+    transition: border-color 0.15s ease;
+  }
+
+  a:hover {
+    border-color: var(--accent-bright);
+  }
+
+  .contact-card {
+    background: linear-gradient(180deg, var(--surface-2), var(--surface));
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 28px;
+    text-align: center;
+  }
+
+  .contact-card .label {
+    color: var(--text-dim);
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .contact-card .email {
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  footer {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 13px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 40px 18px 64px; }
+    h1 { font-size: 26px; }
+    .card { padding: 22px 20px; }
+  }
+</style>
 </head>
 <body>
-    Son güncelleme: 21.07.2026
+  <div class="top-glow"></div>
+  <div class="wrap">
+    <header>
+      <div class="badge"><span class="dot"></span>Bütçe Takip</div>
+      <h1>Gizlilik Politikası</h1>
+      <p class="updated">Son güncelleme: 21.07.2026</p>
+    </header>
 
-<p> 1. Giriş
-Bu gizlilik politikası, "Bütçe Takip" mobil uygulamasının ("Uygulama") kullanıcılarından hangi verileri, ne amaçla topladığını ve bu verilerin nasıl korunduğunu açıklar. Uygulamayı kullanarak bu politikayı kabul etmiş olursunuz.
+    <div class="card">
+      <h2><span class="num">1</span>Giriş</h2>
+      <p>Bu gizlilik politikası, "Bütçe Takip" mobil uygulamasının ("Uygulama") kullanıcılarından hangi verileri, ne amaçla topladığını ve bu verilerin nasıl korunduğunu açıklar. Uygulamayı kullanarak bu politikayı kabul etmiş olursunuz.</p>
+    </div>
 
-2. Topladığımız Veriler
-- Hesap bilgileri: E-posta adresiniz ve (varsa) ad-soyad bilginiz, Firebase Authentication üzerinden hesabınızı oluşturup giriş yapabilmeniz için saklanır.
-- Finansal kayıtlarınız: Girdiğiniz harcamalar, kategoriler, tutarlar, bütçe limitleri, tekrarlayan işlemler ve birikim hedefleri, yalnızca size ait bir veritabanı alanında (Firebase Firestore) saklanır.
-- Reklam ve cihaz tanımlayıcıları: Uygulamada Google AdMob reklam altyapısı kullanılır. AdMob, reklam gösterimi için cihaz reklam kimliği gibi bazı teknik tanımlayıcıları toplayabilir; onay verdiğiniz durumlarda reklamlar ilgi alanlarınıza göre kişiselleştirilebilir.
+    <div class="card">
+      <h2><span class="num">2</span>Topladığımız Veriler</h2>
+      <ul>
+        <li><strong>Hesap bilgileri:</strong> E-posta adresiniz ve (varsa) ad-soyad bilginiz, Firebase Authentication üzerinden hesabınızı oluşturup giriş yapabilmeniz için saklanır.</li>
+        <li><strong>Finansal kayıtlarınız:</strong> Girdiğiniz harcamalar, kategoriler, tutarlar, bütçe limitleri, tekrarlayan işlemler ve birikim hedefleri, yalnızca size ait bir veritabanı alanında (Firebase Firestore) saklanır.</li>
+        <li><strong>Reklam ve cihaz tanımlayıcıları:</strong> Uygulamada Google AdMob reklam altyapısı kullanılır. AdMob, reklam gösterimi için cihaz reklam kimliği gibi bazı teknik tanımlayıcıları toplayabilir; onay verdiğiniz durumlarda reklamlar ilgi alanlarınıza göre kişiselleştirilebilir.</li>
+      </ul>
+    </div>
 
-3. Verilerinizi Nasıl Kullanıyoruz
-Topladığımız veriler yalnızca: (a) uygulamanın temel işlevlerini (harcama takibi, bütçe/birikim hesaplamaları) sunmak, (b) hesabınızı güvenli şekilde yönetmek, (c) yasal olarak gerekli olduğunda reklam gösterimi ve kişiselleştirme rızanızı yönetmek amacıyla kullanılır. Verileriniz satılmaz veya pazarlama amacıyla üçüncü taraflarla paylaşılmaz.
+    <div class="card">
+      <h2><span class="num">3</span>Verilerinizi Nasıl Kullanıyoruz</h2>
+      <p>Topladığımız veriler yalnızca: (a) uygulamanın temel işlevlerini (harcama takibi, bütçe/birikim hesaplamaları) sunmak, (b) hesabınızı güvenli şekilde yönetmek, (c) yasal olarak gerekli olduğunda reklam gösterimi ve kişiselleştirme rızanızı yönetmek amacıyla kullanılır. Verileriniz satılmaz veya pazarlama amacıyla üçüncü taraflarla paylaşılmaz.</p>
+    </div>
 
-4. Kullanılan Üçüncü Taraf Servisler
-- Google Firebase (Authentication, Firestore): Hesap ve veri depolama altyapısı.
-- Google AdMob: Reklam gösterimi. AdMob'un kendi gizlilik politikası için: https://policies.google.com/privacy
-- Google Kullanıcı Rızası Platformu (UMP): AB/Türkiye gibi bölgelerde gerektiğinde reklam kişiselleştirme onayınızı almak için kullanılır.
+    <div class="card">
+      <h2><span class="num">4</span>Kullanılan Üçüncü Taraf Servisler</h2>
+      <ul>
+        <li><strong>Google Firebase</strong> (Authentication, Firestore): Hesap ve veri depolama altyapısı.</li>
+        <li><strong>Google AdMob:</strong> Reklam gösterimi. AdMob'un kendi gizlilik politikası için: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+        <li><strong>Google Kullanıcı Rızası Platformu (UMP):</strong> AB/Türkiye gibi bölgelerde gerektiğinde reklam kişiselleştirme onayınızı almak için kullanılır.</li>
+      </ul>
+    </div>
 
-5. Veri Güvenliği
-Verileriniz, Google Firebase altyapısının sağladığı endüstri standardı güvenlik önlemleriyle (şifreli iletişim, erişim kontrolü) korunur. Yalnızca kendi hesabınızla ilişkili verilere erişebilirsiniz.
+    <div class="card">
+      <h2><span class="num">5</span>Veri Güvenliği</h2>
+      <p>Verileriniz, Google Firebase altyapısının sağladığı endüstri standardı güvenlik önlemleriyle (şifreli iletişim, erişim kontrolü) korunur. Yalnızca kendi hesabınızla ilişkili verilere erişebilirsiniz.</p>
+    </div>
 
-6. Haklarınız
-6698 sayılı KVKK ve (varsa) AB GDPR kapsamında; verilerinize erişme, düzeltme, silme ve işlenmesine itiraz etme hakkına sahipsiniz. Hesabınızı ve tüm verilerinizi silmek için bizimle iletişime geçebilirsiniz.
+    <div class="card">
+      <h2><span class="num">6</span>Haklarınız</h2>
+      <p>6698 sayılı KVKK ve (varsa) AB GDPR kapsamında; verilerinize erişme, düzeltme, silme ve işlenmesine itiraz etme hakkına sahipsiniz. Hesabınızı ve tüm verilerinizi silmek için bizimle iletişime geçebilirsiniz.</p>
+    </div>
 
-7. Çocukların Gizliliği
-Uygulama, 13 yaş altı çocuklara yönelik değildir ve bilerek onlardan veri toplamaz.
+    <div class="card">
+      <h2><span class="num">7</span>Çocukların Gizliliği</h2>
+      <p>Uygulama, 13 yaş altı çocuklara yönelik değildir ve bilerek onlardan veri toplamaz.</p>
+    </div>
 
-8. Reklam Kişiselleştirme Tercihleri
-Reklam kişiselleştirme onayınızı istediğiniz zaman uygulama içinden değiştirebilirsiniz.
+    <div class="card">
+      <h2><span class="num">8</span>Reklam Kişiselleştirme Tercihleri</h2>
+      <p>Reklam kişiselleştirme onayınızı istediğiniz zaman uygulama içinden değiştirebilirsiniz.</p>
+    </div>
 
-9. Politika Değişiklikleri
-Bu politika zaman zaman güncellenebilir; önemli değişikliklerde uygulama üzerinden bilgilendirileceksiniz.
+    <div class="card">
+      <h2><span class="num">9</span>Politika Değişiklikleri</h2>
+      <p>Bu politika zaman zaman güncellenebilir; önemli değişikliklerde uygulama üzerinden bilgilendirileceksiniz.</p>
+    </div>
 
-10. İletişim
-Sorularınız için: demirtaha70@gmail.com
-</p>
+    <div class="contact-card">
+      <div class="label">Sorularınız için</div>
+      <div class="email">demirtaha70@gmail.com</div>
+    </div>
+
+    <footer>Bütçe Takip · Gizlilik Politikası</footer>
+  </div>
 </body>
 </html>
